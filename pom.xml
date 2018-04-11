@@ -2,23 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>org.gdz.netty4</artifactId>
-        <groupId>com.bfjr</groupId>
-        <version>1.0.0.RELEASE</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>org.gdz.netty.fileupload</groupId>
+    <artifactId>FileUploadDemo</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-    <artifactId>fileServer</artifactId>
-
-    <!-- 4.1.9.Final -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <netty.version>4.1.9.Final</netty.version>
     </properties>
-    <!-- region 依赖 -->
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,13 +30,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- region netty -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty.version}</version>
         </dependency>
-        <!-- endregion -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,9 +57,17 @@
             <artifactId>okhttp</artifactId>
             <version>2.7.5</version>
         </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180130</version>
+        </dependency>
     </dependencies>
-    <!-- endregion -->
-
 
     <build>
         <plugins>

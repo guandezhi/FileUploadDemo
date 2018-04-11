@@ -1,8 +1,6 @@
 package com.netty.client;
 
 import com.squareup.okhttp.*;
-import com.sun.deploy.util.SessionState;
-
 import java.io.File;
 import java.io.IOException;
 
