@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.netty:netty-codec-http:5.0.0.Alpha2">
+    <CLASSES>
+      <root url="jar://E:/personJar/io/netty/netty-codec-http/5.0.0.Alpha2/netty-codec-http-5.0.0.Alpha2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/personJar/io/netty/netty-codec-http/5.0.0.Alpha2/netty-codec-http-5.0.0.Alpha2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/personJar/io/netty/netty-codec-http/5.0.0.Alpha2/netty-codec-http-5.0.0.Alpha2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
