@@ -1,0 +1,45 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.netty.file.config.FileConfig",
+      "name": "file",
+      "type": "com.netty.file.config.FileConfig"
+    },
+    {
+      "sourceType": "com.netty.file.config.ServerConfig",
+      "name": "netty",
+      "type": "com.netty.file.config.ServerConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.netty.file.config.FileConfig",
+      "name": "file.tmp-dir",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.netty.file.config.FileConfig",
+      "name": "file.upload-dir",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.netty.file.config.ServerConfig",
+      "defaultValue": 0,
+      "name": "netty.max-frame-length",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.netty.file.config.ServerConfig",
+      "defaultValue": 0,
+      "name": "netty.max-threads",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.netty.file.config.ServerConfig",
+      "defaultValue": 0,
+      "name": "netty.port",
+      "type": "java.lang.Integer"
+    }
+  ]
+}

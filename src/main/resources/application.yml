@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Netty4Server
+  profiles:
+    active: local
+  jackson:
+    date-format: 'yyyy-MM-dd HH:mm:ss'  # Date format string or a fully-qualified date format class name. For instance `yyyy-MM-dd HH:mm:ss`.
+    time-zone: GMT+8 #设置时区，否则会正常时间差8小时
+  session:
+    store-type: none

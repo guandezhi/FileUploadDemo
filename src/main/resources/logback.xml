@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	<!-- <property name="LOG_HOME" value="c:" /> -->
+
+	<!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- info日志输出 -->
+	<appender name="InfoFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME:-d:/}logs/info/info.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME:-d:/}logs/info/info-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<MaxHistory>60</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>5MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+		</layout>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+	
+	<!-- error日志输出 -->
+	<appender name="ErrorFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME:-d:/}logs/error/error.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME:-d:/}logs/error/error-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<MaxHistory>60</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>5MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+		</layout>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+	
+	<!-- 所有日志输出 -->
+	<appender name="AllFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME:-d:/}logs/all/all.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME:-d:/}logs/all/all-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<MaxHistory>60</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>5MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<logger name="org.mybatis" level="TRACE"/>
+	<logger name="com.bfjr.passport.entity.mapper" level="DEBUG"/>
+
+	<root level="info">
+		<appender-ref ref="stdout" />
+		<appender-ref ref="InfoFile" />
+		<appender-ref ref="ErrorFile" />
+		<appender-ref ref="AllFile" />
+	</root>
+</configuration>

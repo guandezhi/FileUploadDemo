@@ -1,0 +1,13 @@
+# netty配置
+netty:
+  # 端口号
+  port: 12345
+  # 最大线程数
+  maxThreads: 1024
+  # 数据包的最大长度
+  maxFrameLength: 65535
+
+#文件存储路径
+file:
+  uploadDir: F:\store
+  tmpDir: F:\temp
